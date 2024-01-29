@@ -211,7 +211,7 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
 
 • ғɪʟᴇ sɪᴢᴇ : {file_size}
 
-• I'ᴍ ғʀᴏᴍ <a href="https://t.me/allmovieshere019">Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ</a> 👻""" 
+• I'ᴍ ғʀᴏᴍ <a href="https://t.me/+4nzja42ELQwzOWVl">Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ</a> 👻""" 
 
     IMDB_TEMPLATE_TXT = """
 <b>Query: {qurey}

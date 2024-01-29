@@ -49,6 +49,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', True))
+HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/Howto_openlink_0")
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'urlpro.site')
 SHORTLINK_API = environ.get('SHORTLINK_API', '4e015d2ecb1796cf288d1b6ced81fa01ae120ee6')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))

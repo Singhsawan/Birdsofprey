@@ -161,7 +161,7 @@ async def next_page(bot, query):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+            InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
         ])
     else:
         btn = []
@@ -173,7 +173,7 @@ async def next_page(bot, query):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+            InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
         ])
     try:
         if settings['max_btn']:
@@ -388,7 +388,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+            InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
         ])
     else:
         btn = []
@@ -400,7 +400,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+            InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
         ])
 
     if offset != "":
@@ -565,7 +565,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             for file in files
         ]
         btn.insert(0, [
-            InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+            InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
         ])
     else:
         btn = []
@@ -577,7 +577,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+            InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
         ])
         
     offset = 0
@@ -700,7 +700,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
             ]
             )
         btn.insert(0, [
-        InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+        InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
         ])
     else:
         btn = []
@@ -712,7 +712,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
             ]
         )
         btn.insert(0, [
-        InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+        InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
         ])
 
     if offset != "":
@@ -1415,17 +1415,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "sinfo":
         await query.answer(text=script.SINFO, show_alert=True)
 
+    elif query.data == "abu":
+        await query.answer(text=script.ABU_TXT, show_alert=True)
+
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('🤨𝙰𝙱𝙾𝚄𝚃', callback_data='abu')
                 ],[
-                    InlineKeyboardButton('Eᴀʀɴ Mᴏɴᴇʏ 💸', callback_data="shortlink_info"),
-                    InlineKeyboardButton('⌬ Mᴏᴠɪᴇ Gʀᴏᴜᴘ', url=GRP_LNK)
-                ],[
-                    InlineKeyboardButton('〄 Hᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('⍟ Aʙᴏᴜᴛ', callback_data='about')
-                ],[
-                    InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
+                    InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1694,7 +1692,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "shortlink_info":
             btn = [[
                     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start"),
-                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="telegram.me/bharat_abot")
+                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="telegram.me/J_shree_ram")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
@@ -1857,7 +1855,7 @@ async def auto_filter(client, msg, spoll=False):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+            InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
         ])
     else:
         btn = []
@@ -1869,7 +1867,7 @@ async def auto_filter(client, msg, spoll=False):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+            InlineKeyboardButton("ꜱᴇɴᴅ ᴀʟʟ", callback_data=f"sendfiles#{key}")
         ])
     if offset != "":
         req = message.from_user.id if message.from_user else 0

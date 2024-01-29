@@ -5,19 +5,17 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ M�
     HELP_TXT = """<b>Hᴇʏ {}
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
-    ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ : {}</b>
-<b>✯ Cʀᴇᴀᴛᴏʀ : <a href=https://t.me/Bharat_Abot>Owner</a></b>
-<b>✯ Uᴘᴅᴀᴛᴇs : <a href=https://t.me/Bishnoi_botz>Bot Updates</a></b>
-<b>✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs : ᴠ2.0.62 [Sᴛᴀʙʟᴇ]</b>"""
+    ABU_TXT = """🗽|𝐀𝐁𝐎𝐔𝐓 𝐌𝐄𝐒𝐒𝐀𝐆𝐄|🗽
+●𝗢𝘄𝗻𝗲𝗿 ✰ℕ𝕠𝕥𝕙𝕚𝕟𝕘 𝕓𝕣𝕠
+●𝘀𝗲𝗿𝘃𝗲𝗿 ✰𝗛𝗲𝗿𝗼𝗸𝘂
+●𝗡𝗮𝗺𝗲 ✰ᴊᴏʀᴅᴀɴ
+
+😜í αm vєrч pσwєrfull😜"""
 
     SOURCE_TXT = """
-<b>Hᴇʏ, Tʜɪs ɪs ᴀ Oᴘᴇɴ Sᴏᴜʀᴄᴇ Pʀᴏᴊᴇᴄᴛ.
-
-Tʜɪs Bᴏᴛ ʜᴀs Lᴀᴛᴇsᴛ ᴀɴᴅ Aᴅᴠᴀɴᴄᴇᴅ Fᴇᴀᴛᴜʀᴇs⚡️
-
-Wᴀɴᴛ ᴛʜɪs Bᴏᴛ Rᴇᴘᴏ? - <a href='https://t.me/know_abhii'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a></b> 🙃</b>
-
-Mᴏʀᴇ Iɴғᴏ Aʙᴏᴜᴛ ᴛʜɪs Rᴇᴘᴏ - <a href='https://t.me/Bishnoi_Botz'>ᴅᴏᴜʙʟᴇ ᴛᴀᴘ</a></b>
+<b>Sᴏʀʀʏ Sᴏᴜʀᴄᴇ Cᴏᴅᴇ Oғ Tʜɪs Bᴏᴛ ɪs Pʀɪᴠᴀᴛᴇ 
+Aᴅᴅ Tʜɪs Bᴏᴛ ɪɴ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Usᴇ Lɪᴋᴇ Yᴏᴜʀs😊
+</b>
 """
 
     MANUELFILTER_TXT = """ʜᴇʟᴘ: <b>ꜰɪʟᴛᴇʀꜱ</b>
@@ -157,7 +155,7 @@ Nᴀᴍᴇ - {}"""
 
 [ ꜱᴛᴇᴘ1 ]👉ᴀᴅᴅ ʙᴏᴛ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴡɪᴛʜ ᴀʟʟ ʀɪɢʜᴛꜱ.
 
-[ ꜱᴛᴇᴘ 2 ]👉 ᴍᴀᴋᴇ ᴀᴄᴄᴏᴜɴᴛ ᴏɴ vnshortener.com [ʏᴏᴜ ᴄᴀɴ ᴀʟꜱᴏ ᴜꜱᴇ ᴏᴛʜᴇʀ ʟɪɴᴋ ꜱᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ ᴛᴏᴏ.]
+[ ꜱᴛᴇᴘ 2 ]👉 ᴍᴀᴋᴇ ᴀᴄᴄᴏᴜɴᴛ ᴏɴ omnifly.in.net [ʏᴏᴜ ᴄᴀɴ ᴀʟꜱᴏ ᴜꜱᴇ ᴏᴛʜᴇʀ ʟɪɴᴋ ꜱᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ ᴛᴏᴏ.]
 
 [ ꜱᴛᴇᴘ 3 ]👉 ᴄᴏᴘʏ ʏᴏᴜʀ ᴀᴘɪ ᴛᴏᴋᴇɴ ꜰʀᴏᴍ ʟɪɴᴋ ꜱᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ ᴅᴀꜱʜʙᴏᴀʀᴅ.
 
@@ -166,7 +164,7 @@ Nᴀᴍᴇ - {}"""
 [ /set_shortner ᴡᴇʙꜱɪᴛᴇɴᴀᴍᴇ ᴀᴘɪᴛᴏᴋᴇɴ]
 
 ᴇxᴀᴍᴘʟᴇ 👇
- <code>/set_shortner Ziplinker.net 32d47f202b4faed5fa070f05cf60a075e1c50ff1 </code>
+ <code>/set_shortner omnifly.in.net 32d47f202b4faed5fa070f05cf60a075e1c50ff1 </code>
 
  [ɴᴏᴛᴇ 👉ᴏᴜʀ ʙᴏᴛ ɪꜱ ꜰʀᴇᴇ ꜰᴏʀ ᴇᴠᴇʀʏ ᴜꜱᴇʀ ].
 
@@ -209,9 +207,11 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    CAPTION = """<b><a https://t.me/Jhon_XroBot?start=buy_premium>{file_name} </a></b>
+    CAPTION = """<b>• ғɪʟᴇ ɴᴀᴍᴇ: {file_name}
 
-<i>ᴘʟᴇᴀsᴇ ꜰᴏʀᴡᴀʀᴅ ᴛʜɪs ꜰɪʟᴇs ᴛᴏ ᴛʜᴇ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇ ᴀɴᴅ ᴄʟᴏsᴇ ᴛʜɪs ᴍᴇssᴀɢᴇ</i>""" 
+• ғɪʟᴇ sɪᴢᴇ : {file_size}
+
+• I'ᴍ ғʀᴏᴍ <a href="https://t.me/allmovieshere019">Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ</a> 👻""" 
 
     IMDB_TEMPLATE_TXT = """
 <b>Query: {qurey}

@@ -301,7 +301,7 @@ async def start(client, message):
                         ]]
                 await message.reply_text(
                     text=script.VERIFY_TXT.format( message.from_user.mention),
-                    protect_content=True,
+                    protect_content=False,
                     reply_markup=InlineKeyboardMarkup(btn)
                 )
                 return
@@ -364,7 +364,7 @@ async def start(client, message):
                         ]]
                 await message.reply_text(
                     text=script.VERIFY_TXT.format( message.from_user.mention),
-                    protect_content=True,
+                    protect_content=False,
                     reply_markup=InlineKeyboardMarkup(btn)
                 )
                 return
@@ -420,7 +420,7 @@ async def start(client, message):
                 ]]
         await message.reply_text(
             text=script.VERIFY_TXT.format( message.from_user.mention),
-            protect_content=True,
+            protect_content=False,
             reply_markup=InlineKeyboardMarkup(btn)
         )
         return

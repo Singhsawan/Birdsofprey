@@ -89,8 +89,8 @@ QUALITY = ["PreDVD", "HDTS", "S-PRINT", "HQ", "480p", "720p", "1080p", "4K"]
 
 # stream features vars
 F2LINK_C = environ.get("F2LINK_C", "-1001765670990")
-ON_DWNLD = environ.get("ON_DWNLD", "cvcxx-6f354f26e132.herokuapp.com")
-ON_WATCH = environ.get("ON_WATCH", "cvcxx-6f354f26e132.herokuapp.com")
+ON_DWNLD = environ.get("ON_DWNLD", "watcherr-695f21658eee.herokuapp.com")
+ON_WATCH = environ.get("ON_WATCH", "watcherr-695f21658eee.herokuapp.com")
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")

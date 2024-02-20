@@ -1820,8 +1820,9 @@ async def auto_filter(client, msg: Message, edit_message=None, spoll=False, spel
             search = search.replace(":","")
             files, offset, total_results = await get_search_results(message.chat.id ,search, offset=0, filter=True)
             settings = await get_settings(message.chat.id)
-            
-            if settings["spell_check"] and spell_chok:
+
+            if not files:
+                if settings["spell_check"] and spell_chok:
                     return await advantage_spell_chok(msg, m, client, movie_name=search)
                 elif edit_message:
                     dup_search = message.text

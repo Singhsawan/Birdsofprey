@@ -1419,12 +1419,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(text=script.ABU_TXT, show_alert=True)
 
     elif query.data == "start":
-        buttons = [[
-                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('🤨𝙰𝙱𝙾𝚄𝚃', callback_data='abu')
-                ],[
-                    InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                  ]]
+        buttons =  [[
+            InlineKeyboardButton('⛦ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⛦', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            ],[
+            InlineKeyboardButton('Bᴏᴛ Oᴡɴᴇʀ 👨🏻‍💻', callback_data='owner_info'),
+            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ 🫂', callback_data='money_bot')
+            ],[      
+            InlineKeyboardButton('Hᴇʟᴘ ♻️', callback_data='help'),
+            InlineKeyboardButton('Aʙᴏᴜᴛ 📶', callback_data='abu')
+            ],[
+            InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇy ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='shortlink_info')
+        ]] 
         
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(

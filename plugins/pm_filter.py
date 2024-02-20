@@ -1804,7 +1804,7 @@ async def auto_filter(client, msg: Message, edit_message=None, spoll=False, spel
         if len(message.text) < 100:
             search = message.text
             if not edit_message:
-                m=await message.reply_text(f"<b><i> 𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀 𝖿𝗈𝗋 '{search}' 🔎</i></b>")
+                m=await message.reply_text(f"<b><i> ꜱᴇᴀʀᴄʜɪɴɢ ꜰᴏʀ '{search}' 🔎</i></b>")
             search = search.lower()
             find = search.split(" ")
             search = ""
@@ -1829,7 +1829,7 @@ async def auto_filter(client, msg: Message, edit_message=None, spoll=False, spel
                     dup_search = kwargs.get("movie_name", dup_search)
                     reply = dup_search.replace('hindi', '').replace(" ", '+')
                     btn = [[
-                    InlineKeyboardButton("🔍 Click To Check Spilling ✅", url=f"https://www.google.com/search?q={reply}+movie")
+                    InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ 🔎", url=f"https://www.google.com/search?q={reply}+movie")
                 ]]
                     em = await edit_message.edit("<b>This Movie Not Found In DataBase,\n\ni am sending your request to my Owner\n\n Go to Google Check your spelling 👇</b>", reply_markup=InlineKeyboardMarkup(btn))
                     async def del_func():
@@ -1842,7 +1842,7 @@ async def auto_filter(client, msg: Message, edit_message=None, spoll=False, spel
                     dup_search = kwargs.get("movie_name", dup_search)
                     reply = dup_search.replace('hindi', '').replace(" ", '+')
                     btn = [[
-                    InlineKeyboardButton("🔍 Click To Check Spilling ✅", url=f"https://www.google.com/search?q={reply}+movie")
+                    InlineKeyboardButton("🔍ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ 🔎", url=f"https://www.google.com/search?q={reply}+movie")
                 ]]
                     em = await edit_message.edit("<b>This Movie Not Found In DataBase,\n\ni am sending your request to my Owner\n\n Go to Google Check your spelling 👇</b>", reply_markup=InlineKeyboardMarkup(btn))
                     async def del_func():
@@ -1855,12 +1855,12 @@ async def auto_filter(client, msg: Message, edit_message=None, spoll=False, spel
     else:
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
-        #m=await edit_message.edit(f"<b><i> 𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀 𝖿𝗈𝗋 '{search}' 🔎</i></b>")
+        #m=await edit_message.edit(f"<b><i> ꜱᴇᴀʀᴄʜɪɴɢ ꜰᴏʀ '{search}' 🔎</i></b>")
         settings = await get_settings(message.chat.id)
         await msg.message.delete()
         
     if edit_message:
-        m=await edit_message.edit(f"<b><i> 𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀 𝖿𝗈𝗋 '{search}' 🔎</i></b>") 
+        m=await edit_message.edit(f"<b><i> ꜱᴇᴀʀᴄʜɪɴɢ ꜰᴏʀ '{search}' 🔎</i></b>") 
         
     pre = 'filep' if settings['file_secure'] else 'file'
     key = f"{message.chat.id}-{message.id}"
@@ -1959,7 +1959,7 @@ async def auto_filter(client, msg: Message, edit_message=None, spoll=False, spel
         if not settings["button"]:
             cap+="<b>\n\n<u>📚 Requested Files 👇</u></b>\n"
             for file in files:
-                cap += f"<b>\n📁 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n</a></b>"
+                cap += f"<b>\n♦️ <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n</a></b>"
     else:
         if settings["button"]:
             cap = f"<b>Tʜᴇ Rᴇꜱᴜʟᴛꜱ Fᴏʀ ☞ {search}\n\nRᴇǫᴜᴇsᴛᴇᴅ Bʏ ☞ {message.from_user.mention}\n\nʀᴇsᴜʟᴛ sʜᴏᴡ ɪɴ ☞ {remaining_seconds} sᴇᴄᴏɴᴅs\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ ☞ : {message.chat.title} \n\n⚠️ ᴀꜰᴛᴇʀ 5 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ 🗑️\n\n</b>"
@@ -1967,7 +1967,7 @@ async def auto_filter(client, msg: Message, edit_message=None, spoll=False, spel
             cap = f"<b>🙋‍♂ Hᴇʏ {message.from_user.mention},♻️ Fᴏᴜɴᴅ {total_results} Rᴇsᴜʟᴛs ғᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ ☞︎︎︎ {search}\n\n</b>"
             cap+="<b><u>📚 Requested Files 👇</u></b>\n\n"
             for file in files:
-                cap += f"<b>📁 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
+                cap += f"<b>♦️ <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
 
     if imdb and imdb.get('poster'):
         try:
@@ -2032,7 +2032,7 @@ async def auto_filter(client, msg: Message, edit_message=None, spoll=False, spel
 async def advantage_spell_chok(msg, edit_message, client, **kwargs):
     og_name = kwargs.get("movie_name")
     us = msg.from_user.id if msg.from_user else 0
-    await edit_message.edit("⚡️ 𝘼𝙘𝙩𝙞𝙫𝙚 𝙨𝙪𝙥𝙚𝙧 𝙨𝙥𝙚𝙡𝙡 𝙘𝙝𝙚𝙘𝙠 ⚡️")
+    await edit_message.edit(" ᴀᴄᴛɪᴠᴇ ꜱᴜᴘᴇʀ ꜱᴘᴇʟʟ ᴄʜᴇᴄᴋ ")
     query = re.sub(
         r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
         "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
@@ -2045,9 +2045,9 @@ async def advantage_spell_chok(msg, edit_message, client, **kwargs):
         logger.exception(e)
         reply = malik.replace(" ", '+')  
         reply_markup = InlineKeyboardMarkup([[
-        InlineKeyboardButton("🔍 𝗖𝗹𝗶𝗰𝗸 𝗧𝗼 𝗖𝗵𝗲𝗰𝗸 𝗦𝗽𝗶𝗹𝗹𝗶𝗻𝗴 ✅", url=f"https://www.google.com/search?q={reply}+movie")
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ 🔎", url=f"https://www.google.com/search?q={reply}+movie")
         ],[
-        InlineKeyboardButton("🔍 𝗖𝗹𝗶𝗰𝗸 𝗧𝗼 𝗖𝗵𝗲𝗰𝗸 𝗥𝗲𝗹𝗲𝗮𝘀𝗲 𝗗𝗮𝘁𝗲 📅", url=f"https://www.google.com/search?q={reply}+release+date")
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 🔎", url=f"https://www.google.com/search?q={reply}+release+date")
         ]]  
         )    
         a = await edit_message.edit_text(
@@ -2064,9 +2064,9 @@ async def advantage_spell_chok(msg, edit_message, client, **kwargs):
         malik = kwargs.get("movie_name") or malik
         reply = malik.replace(" ", '+')  
         reply_markup = InlineKeyboardMarkup([[
-        InlineKeyboardButton("🔍 Click To Check Spilling ✅", url=f"https://www.google.com/search?q={reply}+movie")
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ 🔎", url=f"https://www.google.com/search?q={reply}+movie")
         ],[
-        InlineKeyboardButton("🔍 Click To Check Release Date 📅", url=f"https://www.google.com/search?q={reply}+release+date")
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 🔎", url=f"https://www.google.com/search?q={reply}+release+date")
         ]]  
         )    
         ahh = await edit_message.edit_text(
@@ -2093,13 +2093,13 @@ async def advantage_spell_chok(msg, edit_message, client, **kwargs):
             [
                 [
                     InlineKeyboardButton(
-                        "🔍 𝗖𝗹𝗶𝗰𝗸 𝗧𝗼 𝗖𝗵𝗲𝗰𝗸 𝗦𝗽𝗶𝗹𝗹𝗶𝗻𝗴 ✅",
+                        "🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ 🔎",
                         url=f"https://www.google.com/search?q={reply}",
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔍 𝗖𝗹𝗶𝗰𝗸 𝗧𝗼 𝗖𝗵𝗲𝗰𝗸 𝗥𝗲𝗹𝗲𝗮𝘀𝗲 𝗗𝗮𝘁𝗲 📅",
+                        "🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 🔎",
                         url=f"https://www.google.com/search?q={reply}+release+date",
                     )
                 ],

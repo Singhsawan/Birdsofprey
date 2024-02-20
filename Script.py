@@ -173,6 +173,21 @@ Nᴀᴍᴇ - {}"""
 
 Any Doubts or Not Connecting? Contact Me</b>
 """
+
+    EARN_TXT = """<b>
+🎯 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ  Bots ᴏꜰꜰɪᴄɪᴀʟ❣
+
+ ᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ 🦋
+
+
+🔰<a href='https://t.me/+VhSPjdvzTTphNjNl'>✥ ▷ ᴍᴏᴠɪᴇ 𝚇 Channel ◁</a>
+
+🔰<a href='https://t.me/bot_channel_011'>✥ ▷ Support Channel ◁</a>
+
+🔰<a href='https://t.me/+SULp-Vs1vlljM2Rl'>✥ ▷ ᴍᴏᴠɪᴇ ʀᴇ𝚀ᴜᴇꜱᴛ ɢʀᴏᴜᴩ ◁</a>
+
+
+ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/J_shree_ram">ɴᴏᴛʜɪɴɢ ʙʀᴏ</a></b> 🌿</b>"""
     
     REQINFO = """
 ⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠

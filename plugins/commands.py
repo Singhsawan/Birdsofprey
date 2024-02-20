@@ -49,7 +49,7 @@ async def start(client, message):
             InlineKeyboardButton('Hᴇʟᴘ ♻️', callback_data='help'),
             InlineKeyboardButton('Aʙᴏᴜᴛ 📶', callback_data='abu')
             ],[
-            InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇy ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='SHORTLINK_INFO')
+            InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇy ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='shortlink_info')
         ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(

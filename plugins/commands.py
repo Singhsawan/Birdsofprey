@@ -40,12 +40,17 @@ async def start(client, message):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
-        buttons = [[
-                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('🤨𝙰𝙱𝙾𝚄𝚃', callback_data='abu')
-                ],[
-                    InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                  ]]
+        buttons =  [[
+            InlineKeyboardButton('⛦ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⛦', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            ],[
+            InlineKeyboardButton('Bᴏᴛ Oᴡɴᴇʀ 👨🏻‍💻', callback_data='owner_info'),
+            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ 🫂', callback_data='money_bot')
+            ],[      
+            InlineKeyboardButton('Hᴇʟᴘ ♻️', callback_data='help'),
+            InlineKeyboardButton('Aʙᴏᴜᴛ 📶', callback_data='abu')
+            ],[
+            InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇy ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='SHORTLINK_INFO')
+        ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -83,12 +88,17 @@ async def start(client, message):
             )
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
-        buttons = [[
-                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('🤨𝙰𝙱𝙾𝚄𝚃', callback_data='abu')
-                ],[
-                    InlineKeyboardButton('𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                  ]]
+        buttons =  [[
+            InlineKeyboardButton('⛦ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⛦', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            ],[
+            InlineKeyboardButton('Bᴏᴛ Oᴡɴᴇʀ 👨🏻‍💻', callback_data='owner_info'),
+            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ 🫂', callback_data='money_bot')
+            ],[      
+            InlineKeyboardButton('Hᴇʟᴘ ♻️', callback_data='help'),
+            InlineKeyboardButton('Aʙᴏᴜᴛ 📶', callback_data='abu')
+            ],[
+            InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇy ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='SHORTLINK_INFO')
+        ]] 
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
             photo=random.choice(PICS),

@@ -2026,64 +2026,102 @@ async def auto_filter(client, msg: Message, edit_message=None, spoll=False, spel
             for file in files:
                 cap += f"<b>♦️ <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
 
-    if imdb and imdb.get('poster'):
-        try:
-            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await m.delete()
-            try:
-                if settings['auto_delete']:
-                    await asyncio.sleep(300)
-                    await hehe.delete()
-                    await message.delete()
-            except KeyError:
-                await save_group_settings(message.chat.id, 'auto_delete', True)
-                await asyncio.sleep(300)
-                await hehe.delete()
-                await message.delete()
-        except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
-            pic = imdb.get('poster')
-            poster = pic.replace('.jpg', "._V1_UX360.jpg") 
-            hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await m.delete()
-            try:
-               if settings['auto_delete']:
-                    await asyncio.sleep(300)
-                    m=await message.reply_text("🔎")
-                    await hmm.delete()
-                    await message.delete()
-            except KeyError:
-                await save_group_settings(message.chat.id, 'auto_delete', True)
-                await asyncio.sleep(300)
-                await hmm.delete()
-                await message.delete()
-        except Exception as e:
-            logger.exception(e)
-            m=await message.reply_text("🔎") 
-            fek = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await m.delete()
-            try:
-                if settings['auto_delete']:
-                    await asyncio.sleep(300)
-                    await fek.delete()
-                    await message.delete()
-            except KeyError:
-                await save_group_settings(message.chat.id, 'auto_delete', True)
-                await asyncio.sleep(300)
-                await fek.delete()
-                await message.delete()
-    else:
-        fuk = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
-        await m.delete()
+    # if imdb and imdb.get('poster'):
+    #     try:
+    #         hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+    #         await m.delete()
+    #         try:
+    #             if settings['auto_delete']:
+    #                 await asyncio.sleep(300)
+    #                 await hehe.delete()
+    #                 await message.delete()
+    #         except KeyError:
+    #             await save_group_settings(message.chat.id, 'auto_delete', True)
+    #             await asyncio.sleep(300)
+    #             await hehe.delete()
+    #             await message.delete()
+    #     except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
+    #         pic = imdb.get('poster')
+    #         poster = pic.replace('.jpg', "._V1_UX360.jpg")
+    #         #m=await message.reply_text("🔎") 
+    #         hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+    #         await m.delete()
+    #         try:
+    #             if settings['auto_delete']:
+    #                 await asyncio.sleep(300)
+    #                 await hmm.delete()
+    #                 await message.delete()
+    #         except KeyError:
+    #             await save_group_settings(message.chat.id, 'auto_delete', True)
+    #             await asyncio.sleep(300)
+    #             await hmm.delete()
+    #             await message.delete()
+    #     except Exception as e:
+    #         logger.exception(e)
+    #         #m=await message.reply_text("🔎") 
+    #         fek = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn))
+    #         await m.delete()
+    #         try:
+    #             if settings['auto_delete']:
+    #                 await asyncio.sleep(300)
+    #                 await fek.delete()
+    #                 await message.delete()
+    #         except KeyError:
+    #             await save_group_settings(message.chat.id, 'auto_delete', True)
+    #             await asyncio.sleep(300)
+    #             await fek.delete()
+    #             await message.delete()
+    # else:
+    if edit_message:
+        fuk = await edit_message.edit_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)        
         try:
             if settings['auto_delete']:
                 await asyncio.sleep(300)
                 await fuk.delete()
                 await message.delete()
+                file_closed_del=await message.reply_photo(
+                photo=random.choice(CLOSE_IMG),
+                caption=f"<b>ʜᴇʏ {message.from_user.mention}, Fɪʟᴛᴇʀ Fᴏʀ {search} ɪs Cʟᴏꜱᴇᴅ 🗑️</b>")
+                await asyncio.sleep(15)                   
+                await file_closed_del.delete()
         except KeyError:
             await save_group_settings(message.chat.id, 'auto_delete', True)
             await asyncio.sleep(300)
             await fuk.delete()
             await message.delete()
+            file_closed_del=await message.reply_photo(
+            photo=random.choice(CLOSE_IMG),
+            caption=f"<b>ʜᴇʏ {message.from_user.mention}, Fɪʟᴛᴇʀ Fᴏʀ {search} ɪs Cʟᴏꜱᴇᴅ 🗑️</b>")
+            await asyncio.sleep(15)                   
+            await file_closed_del.delete()
+        except pyrogram.errors.exceptions.forbidden_403.MessageDeleteForbidden:
+    # Reply with the message indicating lack of delete permission
+            await message.reply_text("<b>ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ <u>ᴅᴇʟᴇᴛᴇ Mᴇssᴀɢᴇs</u> ɪɴ ɢʀᴏᴜᴘ 🥶\nᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ʏᴏᴜ ᴍᴜsᴛ ɢɪᴠᴇ ᴍᴇ <u>Dᴇʟᴇᴛᴇ Mᴇssᴀɢᴇs</u> ᴘᴇʀᴍɪssɪᴏɴ ʀɪɢʜᴛ ɴᴏᴡ ‼️</b>")
+    else:
+        fuk = await m.edit_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)        
+        try:
+            if settings['auto_delete']:
+                await asyncio.sleep(300)
+                await fuk.delete()
+                await message.delete()
+                file_closed_del=await message.reply_photo(
+                photo=random.choice(CLOSE_IMG),
+                caption=f"<b>ʜᴇʏ {message.from_user.mention}, Fɪʟᴛᴇʀ Fᴏʀ {search} ɪs Cʟᴏꜱᴇᴅ 🗑️</b>")
+                await asyncio.sleep(15)                   
+                await file_closed_del.delete()
+        except KeyError:
+            await save_group_settings(message.chat.id, 'auto_delete', True)
+            await asyncio.sleep(300)
+            await fuk.delete()
+            await message.delete()
+            file_closed_del=await message.reply_photo(
+            photo=random.choice(CLOSE_IMG),
+            caption=f"<b>ʜᴇʏ {message.from_user.mention}, Fɪʟᴛᴇʀ Fᴏʀ {search} ɪs Cʟᴏꜱᴇᴅ 🗑️</b>")
+            await asyncio.sleep(15)                   
+            await file_closed_del.delete()
+        except pyrogram.errors.exceptions.forbidden_403.MessageDeleteForbidden:
+    # Reply with the message indicating lack of delete permission
+            await message.reply_text("<b>ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ <u>ᴅᴇʟᴇᴛᴇ Mᴇssᴀɢᴇs</u> ɪɴ ɢʀᴏᴜᴘ 🥶\nᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ʏᴏᴜ ᴍᴜsᴛ ɢɪᴠᴇ ᴍᴇ <u>Dᴇʟᴇᴛᴇ Mᴇssᴀɢᴇs</u> ᴘᴇʀᴍɪssɪᴏɴ ʀɪɢʜᴛ ɴᴏᴡ ‼️</b>")
 
 
 async def advantage_spell_chok(msg, edit_message, client, **kwargs):

@@ -165,7 +165,7 @@ Nᴀᴍᴇ - {}"""
 [ /set_shortner ᴡᴇʙꜱɪᴛᴇɴᴀᴍᴇ ᴀᴘɪᴛᴏᴋᴇɴ]
 
 ᴇxᴀᴍᴘʟᴇ 👇
- <code>/set_shortner omnifly.in.net 32d47f202b4faed5fa070f05cf60a075e1c50ff1 </code>
+ <code>/set_shortner ziplinker.net 32d47f202b4faed5fa070f05cf60a075e1c50ff1 </code>
 
  [ɴᴏᴛᴇ 👉ᴏᴜʀ ʙᴏᴛ ɪꜱ ꜰʀᴇᴇ ꜰᴏʀ ᴇᴠᴇʀʏ ᴜꜱᴇʀ ].
 
@@ -180,14 +180,14 @@ Any Doubts or Not Connecting? Contact Me</b>
  ᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟꜱ 🦋
 
 
-🔰<a href='https://t.me/+VhSPjdvzTTphNjNl'>✥ ▷ ᴍᴏᴠɪᴇ 𝚇 Channel ◁</a>
+🔰<a https://t.me/movie_hub_013'>✥ ▷ ᴍᴏᴠɪᴇ 𝚇 Channel ◁</a>
 
-🔰<a href='https://t.me/bot_channel_011'>✥ ▷ Support Channel ◁</a>
+🔰<a href='https://t.me/Kunalmovies65'>✥ ▷ Support Channel ◁</a>
 
-🔰<a href='https://t.me/+SULp-Vs1vlljM2Rl'>✥ ▷ ᴍᴏᴠɪᴇ ʀᴇ𝚀ᴜᴇꜱᴛ ɢʀᴏᴜᴩ ◁</a>
+🔰<a href='https://t.me/MovieWalaClub'>✥ ▷ ᴍᴏᴠɪᴇ ʀᴇ𝚀ᴜᴇꜱᴛ ɢʀᴏᴜᴩ ◁</a>
 
 
-ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/J_shree_ram">ɴᴏᴛʜɪɴɢ ʙʀᴏ</a></b> 🌿</b>"""
+ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/Kunalkaushik09">ɴᴏᴛʜɪɴɢ ʙʀᴏ</a></b> 🌿</b>"""
     
     REQINFO = """
 ⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠
@@ -227,13 +227,13 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
 
 • ғɪʟᴇ sɪᴢᴇ : {file_size}
 
-• I'ᴍ ғʀᴏᴍ <a href="https://t.me/+4nzja42ELQwzOWVl">Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ</a> 👻""" 
+• I'ᴍ ғʀᴏᴍ <a href="https://t.me/MovieWalaClub">Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ</a> 👻""" 
 
     OWNER_INFO = """
 <b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟</b>
     
 <b>• ꜰᴜʟʟ ɴᴀᴍᴇ : ɴᴏᴛʜɪɴɢ ʙʀᴏ</b> 
-<b>• ᴜꜱᴇʀɴᴀᴍᴇ : @J_shree_ram</b>
+<b>• ᴜꜱᴇʀɴᴀᴍᴇ : @Kunalkaushik09</b>
 """
     
     IMDB_TEMPLATE_TXT = """

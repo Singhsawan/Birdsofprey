@@ -141,21 +141,46 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
     deleted = 0
     no_media = 0
     unsupported = 0
+
+    exponential_backoff = 1  # Initial backoff time
+    
     async with lock:
         try:
             current = temp.CURRENT
             temp.CANCEL = False
+            
             async for message in bot.iter_messages(chat, lst_msg_id, temp.CURRENT):
-                if temp.CANCEL:
-                    await msg.edit(f"Successfully Cancelled!!\n\nSaved <code>{total_files}</code> files to dataBase!\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nNon-Media messages skipped: <code>{no_media + unsupported}</code>(Unsupported Media - `{unsupported}` )\nErrors Occurred: <code>{errors}</code>")
-                    break
-                current += 1
-                if current % 20 == 0:
-                    can = [[InlineKeyboardButton('Cancel', callback_data='index_cancel')]]
-                    reply = InlineKeyboardMarkup(can)
-                    await msg.edit_text(
-                        text=f"Total messages fetched: <code>{current}</code>\nTotal messages saved: <code>{total_files}</code>\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nNon-Media messages skipped: <code>{no_media + unsupported}</code>(Unsupported Media - `{unsupported}` )\nErrors Occurred: <code>{errors}</code>",
-                        reply_markup=reply)
+                try:
+                    if temp.CANCEL:
+                        await msg.edit(f"Successfully Cancelled!!\n\nSaved <code>{total_files}</code> files to dataBase!\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nNon-Media messages skipped: <code>{no_media + unsupported}</code>(Unsupported Media - `{unsupported}` )\nErrors Occurred: <code>{errors}</code>")
+                        break
+                    
+                    current += 1
+
+                    if current % 100 == 0:
+                        sleep_time = 10  # Adjust the regular sleep time in seconds
+                        print(f"Processed {current} files. Introducing a {sleep_time}-second delay.")
+                        await asyncio.sleep(sleep_time)
+
+                    if current % 20 == 0:
+                        can = [[InlineKeyboardButton('Cancel', callback_data='index_cancel')]]
+                        reply = InlineKeyboardMarkup(can)
+                        await msg.edit_text(
+                            text=f"Total messages fetched: <code>{current}</code>\nTotal messages saved: <code>{total_files}</code>\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nNon-Media messages skipped: <code>{no_media + unsupported}</code>(Unsupported Media - `{unsupported}` )\nErrors Occurred: <code>{errors}</code>",
+                            reply_markup=reply)
+                        await asyncio.sleep(sleep_time)
+
+                except FloodWait as e:
+                    wait_time = e.x * exponential_backoff
+                    print(f"Flood control triggered. Waiting for {wait_time} seconds.")
+                    await asyncio.sleep(wait_time)
+                    exponential_backoff *= 1.5  # Multiply backoff time for the next iteration
+                    continue
+                
+                except Exception as e:
+                    print(f"An error occurred: {e}")
+                    exponential_backoff = 1  # Reset backoff time on non-FloodWait errors
+
                 if message.empty:
                     deleted += 1
                     continue

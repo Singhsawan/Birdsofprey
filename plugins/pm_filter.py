@@ -2124,28 +2124,29 @@ async def auto_filter(client, msg: Message, edit_message=None, spoll=False, spel
             await message.reply_text("<b>ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ <u>ᴅᴇʟᴇᴛᴇ Mᴇssᴀɢᴇs</u> ɪɴ ɢʀᴏᴜᴘ 🥶\nᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ʏᴏᴜ ᴍᴜsᴛ ɢɪᴠᴇ ᴍᴇ <u>Dᴇʟᴇᴛᴇ Mᴇssᴀɢᴇs</u> ᴘᴇʀᴍɪssɪᴏɴ ʀɪɢʜᴛ ɴᴏᴡ ‼️</b>")
 
 
-async def advantage_spell_chok(msg, edit_message, client, **kwargs):
+async def advantage_spell_chok(msg, client, **kwargs):
     og_name = kwargs.get("movie_name")
-    us = msg.from_user.id if msg.from_user else 0
-    await edit_message.edit(" ᴀᴄᴛɪᴠᴇ ꜱᴜᴘᴇʀ ꜱᴘᴇʟʟ ᴄʜᴇᴄᴋ ")
+    user_id = msg.from_user.id
+    user = msg.from_user.id if msg.from_user else 0
     query = re.sub(
         r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
         "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
     
-    malik = query.strip()
-    og_name = malik
+    sts = await msg.reply(f"Searching for {msg.text}")
+
+    kdbotz = query.strip()
     try:
         movies = await get_poster(msg.text, bulk=True)
     except Exception as e:
         logger.exception(e)
-        reply = malik.replace(" ", '+')  
+        reply = kdbotz.replace(" ", '+')  
         reply_markup = InlineKeyboardMarkup([[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ 🔎", url=f"https://www.google.com/search?q={reply}+movie")
+        InlineKeyboardButton("🔍 𝗖𝗹𝗶𝗰𝗸 𝗧𝗼 𝗖𝗵𝗲𝗰𝗸 𝗦𝗽𝗶𝗹𝗹𝗶𝗻𝗴 ✅", url=f"https://www.google.com/search?q={reply}+movie")
         ],[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 🔎", url=f"https://www.google.com/search?q={reply}+release+date")
+        InlineKeyboardButton("🔍 𝗖𝗹𝗶𝗰𝗸 𝗧𝗼 𝗖𝗵𝗲𝗰𝗸 𝗥𝗲𝗹𝗲𝗮𝘀𝗲 𝗗𝗮𝘁𝗲 📅", url=f"https://www.google.com/search?q={reply}+release+date")
         ]]  
         )    
-        a = await edit_message.edit_text(
+        a = await sts.edit_text(
             text=(script.CUDNT_FND.format(query)),
             reply_markup=reply_markup                 
         )
@@ -2154,17 +2155,18 @@ async def advantage_spell_chok(msg, edit_message, client, **kwargs):
             await a.delete()
         await asyncio.create_task(del_func())
         return
+
     movielist = [] #error fixed
     if not movies:
-        malik = kwargs.get("movie_name") or malik
-        reply = malik.replace(" ", '+')  
+        kdbotz = kwargs.get("movie_name") or kdbotz
+        reply = kdbotz.replace(" ", '+') 
         reply_markup = InlineKeyboardMarkup([[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ 🔎", url=f"https://www.google.com/search?q={reply}+movie")
+        InlineKeyboardButton("🔍 Click To Check Spilling ✅", url=f"https://www.google.com/search?q={reply}+movie")
         ],[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 🔎", url=f"https://www.google.com/search?q={reply}+release+date")
+        InlineKeyboardButton("🔍 Click To Check Release Date 📅", url=f"https://www.google.com/search?q={reply}+release+date")
         ]]  
         )    
-        ahh = await edit_message.edit_text(
+        ahh = await sts.edit_text(
             text=(script.CUDNT_FND.format(query)),
             reply_markup=reply_markup                 
         )
@@ -2172,35 +2174,39 @@ async def advantage_spell_chok(msg, edit_message, client, **kwargs):
             await asyncio.sleep(38)
             await ahh.delete()
         await asyncio.create_task(del_func())   
-        return   
+        return
 
     movielist += [movie.get('title') for movie in movies]
     movielist += [f"{movie.get('title')} {movie.get('year')}" for movie in movies]
     movielist = movielist[:2]
     if movielist:
+        splmsg = await sts.edit("ᴀᴄᴛɪᴠᴀᴛɪɴɢ ꜱᴜᴘᴇʀ ꜱᴘᴇʟʟɪɴɢ ᴄʜᴇᴄᴋᴇʀ")
+        await asyncio.sleep(5)
+        await splmsg.delete()
         first_movie = movielist[0]
-        msg.text = first_movie
-        return await auto_filter(client=client, msg=msg, edit_message=edit_message, spell_chok=False, movie_name=og_name or msg.text)
-
+        movies = await replace_words(first_movie)
+        msg.text = movies
+        return await auto_filter(client=client, msg=msg, spell_chok=False, edit_message=sts, movie_name=og_name or msg.text)
+        
     if not movielist:
-        reply = malik.replace(" ", "+")
+        reply = kdbotz.replace(" ", "+")
         reply_markup = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ 🔎",
+                        "🔍 𝗖𝗹𝗶𝗰𝗸 𝗧𝗼 𝗖𝗵𝗲𝗰𝗸 𝗦𝗽𝗶𝗹𝗹𝗶𝗻𝗴 ✅",
                         url=f"https://www.google.com/search?q={reply}",
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 🔎",
+                        "🔍 𝗖𝗹𝗶𝗰𝗸 𝗧𝗼 𝗖𝗵𝗲𝗰𝗸 𝗥𝗲𝗹𝗲𝗮𝘀𝗲 𝗗𝗮𝘁𝗲 📅",
                         url=f"https://www.google.com/search?q={reply}+release+date",
                     )
                 ],
             ]
         )
-        a = await edit_message.edit_text(
+        a = await msg.reply(
             text=(script.CUDNT_FND.format(query)),
             reply_markup=reply_markup,
         )
@@ -2208,7 +2214,7 @@ async def advantage_spell_chok(msg, edit_message, client, **kwargs):
             await asyncio.sleep(30)
             await a.delete()
         await asyncio.create_task(del_func())
-        return 
+        return
 
 async def manual_filters(client, message, text=False):
     settings = await get_settings(message.chat.id)

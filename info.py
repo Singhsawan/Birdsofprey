@@ -50,8 +50,8 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 # Others
 VERIFY = bool(environ.get('VERIFY', True))
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/akmoviefile0/18")
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'vipurl.in')
-SHORTLINK_API = environ.get('SHORTLINK_API', 'bdc457ac96b1d0b195933a63a158926bd28e59e3')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shortxlinks.com')
+SHORTLINK_API = environ.get('SHORTLINK_API', '26c58ac6c7879cf25966a3f6fc999c9c1e3c9315')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-1002107694899').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
